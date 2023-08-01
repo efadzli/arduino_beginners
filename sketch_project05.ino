@@ -1,11 +1,7 @@
 /*
-Arduino Training Series by Cikgu Fadzli
-IoT with Node-RED
-MQTT Connection using WiFi Shield 
-This code can be downloaded from https://github.com/efadzli/arduino_iot_wifishield
-Original code from https://github.com/zakibakar75/MyMQTT_Dioty_Connection_JSON_ESP8266_WiFiESP_library
-Thank you to zakibakar75 for the solution
-This code is using PubSubClient library instead of Cytron ESP8266
+Arduino Training Series by UniKidz
+Robotic Programming Your Engineer
+This code can be downloaded from https://github.com/efadzli/arduino_beginners
 */
 
 #include "WiFiEsp.h"
