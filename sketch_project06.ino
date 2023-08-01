@@ -1,3 +1,9 @@
+/*
+Arduino Training Series by UniKidz
+Robotic Programming Your Engineer
+This code can be downloaded from https://github.com/efadzli/arduino_beginners
+*/
+
 #include <Servo.h>
 Servo myservo;
 int pos = 0;
