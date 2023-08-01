@@ -26,14 +26,7 @@ void loop() {
   cm = duration/29/2;
 
   Serial.print("The distance is (cm): ");   
-  Serial.print(cm);
-
-  if(cm < 10){
-    tone(9, 262);
-    delay(1000);
-    tone(9, 494);  
-    delay(1000);
-  }
+  Serial.println(cm);
 
   delay(200);
 }
