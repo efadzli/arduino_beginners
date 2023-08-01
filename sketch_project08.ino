@@ -6,6 +6,7 @@ This code can be downloaded from https://github.com/efadzli/arduino_beginners
 
 int trigPin = 11;
 int echoPin = 10;
+int buzpin = 13;
 
 void setup(){
   Serial.begin(9600);
@@ -26,15 +27,13 @@ void loop(){
   Serial.println(cm);
 
   if(cm < 10){
-    tone(13, 262);
+    tone(buzpin, 262);
     delay(500);
-    tone(13, 494);
+    noTone(buzpin);
     delay(500);
   } else {
-    noTone(13);
+    noTone(buzpin);
+    delay(200);
   }
 
-    
-
-  delay(200);
 }
