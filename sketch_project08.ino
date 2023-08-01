@@ -26,11 +26,15 @@ void loop(){
   Serial.println(cm);
 
   if(cm < 10){
-    tone(9, 262);
-    delay(1000);
-    tone(9, 494);
-    delay(1000);
+    tone(13, 262);
+    delay(500);
+    tone(13, 494);
+    delay(500);
+  } else {
+    noTone(13);
   }
+
+    
 
   delay(200);
 }
