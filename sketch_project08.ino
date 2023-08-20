@@ -2,38 +2,32 @@
 Arduino Training Series by UniKidz
 Robotic Programming Your Engineer
 This code can be downloaded from https://github.com/efadzli/arduino_beginners
+You need to download a library: DHT sensor library by Adafruit (https://github.com/adafruit/DHT-sensor-library)
 */
 
-int trigPin = 11;
-int echoPin = 10;
-int buzpin = 13;
+#include <DHT.h>
 
-void setup(){
+#define DHTPIN 7
+#define DHTTYPE DHT11
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
   Serial.begin(9600);
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
+  Serial.println("Starting DHT11 Reading..");
+
+  dht.begin();
 }
 
-void loop(){
-  long duration, inches, cm, mm;
-  digitalWrite(trigPin, LOW);
-  delayMicroseconds(2000);
-  digitalWrite(trigPin, HIGH);
-  delayMicroseconds(1000);
-  digitalWrite(trigPin, LOW);
-  duration = pulseIn(echoPin, HIGH);
-  cm = duration/29/2;
-  Serial.print("The distance is (cm): ");
-  Serial.println(cm);
+void loop() {
 
-  if(cm < 10){
-    tone(buzpin, 262);
-    delay(500);
-    noTone(buzpin);
-    delay(500);
-  } else {
-    noTone(buzpin);
-    delay(200);
-  }
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
 
+  Serial.print("Humidity: ");
+  Serial.print(h);
+  Serial.print("%  Temperature: ");
+  Serial.print(t);
+  Serial.println("°C ");
+
+  delay(2000);
 }
