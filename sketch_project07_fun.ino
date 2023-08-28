@@ -11,7 +11,7 @@ void setup() {
   Serial.begin(9600);
   pinMode(trigPin, OUTPUT);   
   pinMode(echoPin, INPUT); 
-  pinMode(buzzerpin, OUTPUT);
+  pinMode(8, OUTPUT);
 }
 
 void loop() {
