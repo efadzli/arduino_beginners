@@ -17,12 +17,12 @@ void setup() {
 
 void loop() {
   timer = analogRead(potpin);
-  for(pos=0; pos<=180; pos++){
+  for(pos=0; pos<=180; pos+=5){
     myservo.write(pos);
     delay(timer);
   }
 
-  for(pos=180; pos>=0; pos--){
+  for(pos=180; pos>=0; pos-=5){
     myservo.write(pos);
     delay(timer);
   }
