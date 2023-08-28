@@ -33,7 +33,7 @@ void loop() {
     delay(50);
   } else if(cm < 20){
     tone(13, 262);
-    delay(150)
+    delay(150);
   }
   noTone(13);
   delay(200);
