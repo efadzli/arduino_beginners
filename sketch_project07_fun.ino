@@ -11,7 +11,7 @@ void setup() {
   Serial.begin(9600);
   pinMode(trigPin, OUTPUT);   
   pinMode(echoPin, INPUT); 
-  pinMode(8, OUTPUT);
+  pinMode(13, OUTPUT);
 }
 
 void loop() {
@@ -28,13 +28,13 @@ void loop() {
 
   Serial.print("The distance is (cm): ");   
   Serial.println(cm);
-  if(cm < 20){
-    tone(8, 262);
-    delay(150);
-  } if(cm < 10){
-    tone(8, 262);
-    delay(50)
+  if(cm < 10){
+    tone(13, 262);
+    delay(50);
+  } else if(cm < 20){
+    tone(13, 262);
+    delay(150)
   }
-  noTone(8);
+  noTone(13);
   delay(200);
 }
